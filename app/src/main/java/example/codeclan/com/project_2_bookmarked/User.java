@@ -1,8 +1,11 @@
 package example.codeclan.com.project_2_bookmarked;
 
-/**
- * Created by user on 03/03/2017.
- */
+
 
 public class User {
+    private String name;
+
+    public User(String name){
+        this.name = name;
+    }
 }
