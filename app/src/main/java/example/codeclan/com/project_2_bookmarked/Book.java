@@ -5,11 +5,22 @@ import java.util.Date;
 
 public class Book {
 
-    private String title;
-    private Integer pageCount;
-    private String dateAdded;
+     int id;
+     String title;
+     int pageCount;
+     String dateAdded;
 
-    public Book(String title, Integer pageCount, String date){
+    public Book(){
+
+    }
+
+    public Book(int id, String title, int pageCount,String date){
+        this.title = title;
+        this.pageCount = pageCount;
+        this.dateAdded = date;
+    }
+
+    public Book(String title, int pageCount, String date){
         this.title = title;
         this.pageCount = pageCount;
         this.dateAdded = date;
@@ -27,5 +38,27 @@ public class Book {
 
     public String getDateAdded() {
         return dateAdded;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    //
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    public void setDateAdded(String dateAdded) {
+        this.dateAdded = dateAdded;
     }
 }

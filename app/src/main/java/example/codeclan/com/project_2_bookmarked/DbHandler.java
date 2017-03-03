@@ -3,8 +3,12 @@ package example.codeclan.com.project_2_bookmarked;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DbHandler extends SQLiteOpenHelper{
 
@@ -15,9 +19,10 @@ public class DbHandler extends SQLiteOpenHelper{
     private static final String DATABASE_NAME = "bookmarked";
 
     //Table name
-    private static final String TABLE_BOOKS = "Books";
+    private static final String TABLE_BOOKS = "books";
+//    private static final String TABLE_=
 
-    //Table columns
+    //BOOK Table columns
     private static final String KEY_ID = "id";
     private static final String TITLE = "title";
     private static final String PAGECOUNT = "pagecount";
@@ -54,6 +59,22 @@ public class DbHandler extends SQLiteOpenHelper{
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_BOOKS, null, values);
         db.close();
+    }
 
+    public List<Book> getAllBooks(){
+        List<Book> allBooks = new ArrayList<Book>();
+
+        //Select all from my Books table
+
+        String selectAllQuery = "SELECT * FROM" + TABLE_BOOKS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectAllQuery, null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Book book = new Book();
+                book.setID(Integer.parseInt(cursor.getString()));
+            }
+        }
     }
 }
