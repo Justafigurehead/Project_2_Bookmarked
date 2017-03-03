@@ -73,8 +73,17 @@ public class DbHandler extends SQLiteOpenHelper{
         if (cursor.moveToFirst()){
             do {
                 Book book = new Book();
-                book.setID(Integer.parseInt(cursor.getString()));
-            }
+                book.setId(Integer.parseInt(cursor.getString(0)));
+                book.setTitle(cursor.getString(1));
+                book.setPageCount(Integer.parseInt(cursor.getString(2)));
+                book.setDateAdded(cursor.getString(3));
+
+                //add all books
+                allBooks.add(book);
+            } while (cursor.moveToNext());
         }
+        return allBooks;
     }
+
+
 }
