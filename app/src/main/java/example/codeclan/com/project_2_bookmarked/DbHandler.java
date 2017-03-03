@@ -1,6 +1,7 @@
 package example.codeclan.com.project_2_bookmarked;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -44,4 +45,15 @@ public class DbHandler extends SQLiteOpenHelper{
     }
 
 
+    public void addBook(Book book){
+        ContentValues values = new ContentValues();
+        values.put(TITLE, book.getTitle());
+        values.put(PAGECOUNT, book.getPageCount());
+        values.put(DATE_ADDED, book.getDateAdded());
+
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert(TABLE_BOOKS, null, values);
+        db.close();
+
+    }
 }
