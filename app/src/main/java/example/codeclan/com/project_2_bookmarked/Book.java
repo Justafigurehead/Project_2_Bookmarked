@@ -14,16 +14,16 @@ public class Book {
 
     }
 
-    public Book(int id, String title, int pageCount,String date){
+    public Book(int id, String title, int pageCount,String dateAdded){
         this.title = title;
         this.pageCount = pageCount;
-        this.dateAdded = date;
+        this.dateAdded = dateAdded;
     }
 
-    public Book(String title, int pageCount, String date){
+    public Book(String title, int pageCount, String dateAdded){
         this.title = title;
         this.pageCount = pageCount;
-        this.dateAdded = date;
+        this.dateAdded = dateAdded;
 
     }
 

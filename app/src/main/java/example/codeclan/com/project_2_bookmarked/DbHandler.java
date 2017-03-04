@@ -26,7 +26,7 @@ public class DbHandler extends SQLiteOpenHelper{
     private static final String KEY_ID = "id";
     private static final String TITLE = "title";
     private static final String PAGECOUNT = "pagecount";
-    private static final String DATE_ADDED = "date added";
+    private static final String DATE_ADDED = "date_added";
 
     public DbHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -34,6 +34,7 @@ public class DbHandler extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
+
         String CREATE_BOOKS_TABLE = "CREATE TABLE " + TABLE_BOOKS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY,"
                 + TITLE + " TEXT,"
@@ -63,29 +64,29 @@ public class DbHandler extends SQLiteOpenHelper{
         db.close();
     }
 
-//    public List<Book> getAllBooks(){
-//        List<Book> allBooks = new ArrayList<Book>();
-//
-//        //Select all from my Books table
-//
-//        String selectAllQuery = "SELECT * FROM" + TABLE_BOOKS;
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor cursor = db.rawQuery(selectAllQuery, null);
-//
-//        if (cursor.moveToFirst()){
-//            do {
-//                Book book = new Book();
-//                book.setId(Integer.parseInt(cursor.getString(0)));
-//                book.setTitle(cursor.getString(1));
-//                book.setPageCount(Integer.parseInt(cursor.getString(2)));
-//                book.setDateAdded(cursor.getString(3));
-//
-//                //add all books
-//                allBooks.add(book);
-//            } while (cursor.moveToNext());
-//        }
-//        return allBooks;
-//    }
+    public List<Book> getAllBooks(){
+        List<Book> allBooks = new ArrayList<Book>();
+
+        //Select all from my Books table
+
+        String selectAllQuery = "SELECT * FROM " + TABLE_BOOKS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectAllQuery, null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Book book = new Book();
+                book.setId(Integer.parseInt(cursor.getString(0)));
+                book.setTitle(cursor.getString(1));
+                book.setPageCount(Integer.parseInt(cursor.getString(2)));
+                book.setDateAdded(cursor.getString(3));
+
+                //add all books
+                allBooks.add(book);
+            } while (cursor.moveToNext());
+        }
+        return allBooks;
+    }
 
     public void closeDB(){
         SQLiteDatabase db = this.getReadableDatabase();
