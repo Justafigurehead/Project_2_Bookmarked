@@ -51,38 +51,46 @@ public class DbHandler extends SQLiteOpenHelper{
 
 
     public void addBook(Book book){
+        SQLiteDatabase db = this.getWritableDatabase();
+
         ContentValues values = new ContentValues();
         values.put(TITLE, book.getTitle());
         values.put(PAGECOUNT, book.getPageCount());
         values.put(DATE_ADDED, book.getDateAdded());
 
-        SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_BOOKS, null, values);
+
         db.close();
     }
 
-    public List<Book> getAllBooks(){
-        List<Book> allBooks = new ArrayList<Book>();
+//    public List<Book> getAllBooks(){
+//        List<Book> allBooks = new ArrayList<Book>();
+//
+//        //Select all from my Books table
+//
+//        String selectAllQuery = "SELECT * FROM" + TABLE_BOOKS;
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor cursor = db.rawQuery(selectAllQuery, null);
+//
+//        if (cursor.moveToFirst()){
+//            do {
+//                Book book = new Book();
+//                book.setId(Integer.parseInt(cursor.getString(0)));
+//                book.setTitle(cursor.getString(1));
+//                book.setPageCount(Integer.parseInt(cursor.getString(2)));
+//                book.setDateAdded(cursor.getString(3));
+//
+//                //add all books
+//                allBooks.add(book);
+//            } while (cursor.moveToNext());
+//        }
+//        return allBooks;
+//    }
 
-        //Select all from my Books table
-
-        String selectAllQuery = "SELECT * FROM" + TABLE_BOOKS;
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectAllQuery, null);
-
-        if (cursor.moveToFirst()){
-            do {
-                Book book = new Book();
-                book.setId(Integer.parseInt(cursor.getString(0)));
-                book.setTitle(cursor.getString(1));
-                book.setPageCount(Integer.parseInt(cursor.getString(2)));
-                book.setDateAdded(cursor.getString(3));
-
-                //add all books
-                allBooks.add(book);
-            } while (cursor.moveToNext());
-        }
-        return allBooks;
+    public void closeDB(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        if (db != null && db.isOpen())
+            db.close();
     }
 
 

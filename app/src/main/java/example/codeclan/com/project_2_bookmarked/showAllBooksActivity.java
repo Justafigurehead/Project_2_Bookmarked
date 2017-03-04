@@ -13,15 +13,17 @@ public class showAllBooksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_all_books);
         DbHandler db = new DbHandler(this);
+
         Book book1 = new Book("Book1", 300, "March");
         db.addBook(book1);
+//
+//        List<Book> allBooks = db.getAllBooks();
+//
+//        for (Book book : allBooks) {
+//            Log.d("all my books", book.getTitle());
+//        }
 
-        List<Book> books = db.getAllBooks();
-
-        for (Book book : books) {
-            String log = "Id: " + book.getId() + " ,Name: " + book.getTitle() + " ,PageCount: " + book.getPageCount();
-            Log.d("Added", log);
-        }
+        db.closeDB();
     }
 
 }
