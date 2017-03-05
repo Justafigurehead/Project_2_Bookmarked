@@ -1,5 +1,6 @@
 package example.codeclan.com.project_2_bookmarked;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,9 +39,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void onItemClick(AdapterView<?> parent, View view, int i, long id){
-        String toastText = "Book was clicked";
+        Intent intent = new Intent(this, individualBookInfoActivity.class);
+        startActivity(intent);
 
-        Toast.makeText(this, toastText, Toast.LENGTH_SHORT).show();
+        //On click to move to a new activity.
 
     }
 
