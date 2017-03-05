@@ -64,6 +64,8 @@ public class DbHandler extends SQLiteOpenHelper{
         db.close();
     }
 
+
+    // View all books
     public List<Book> getAllBooks(){
         List<Book> allBooks = new ArrayList<Book>();
 
@@ -88,11 +90,27 @@ public class DbHandler extends SQLiteOpenHelper{
         return allBooks;
     }
 
+    //Update a single entry
+
+    public String updateBookEntry(Integer id, String title, int pagecount){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(TITLE, title);
+        values.put(PAGECOUNT, pagecount);
+        db.update(TABLE_BOOKS, values, KEY_ID + "=" + id, null);
+        return title + "updated";
+    }
+
+
+
+    //close db method
     public void closeDB(){
         SQLiteDatabase db = this.getReadableDatabase();
         if (db != null && db.isOpen())
             db.close();
     }
+
 
 
 }
