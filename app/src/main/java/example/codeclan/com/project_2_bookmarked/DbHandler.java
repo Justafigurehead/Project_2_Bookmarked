@@ -6,12 +6,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DbHandler extends SQLiteOpenHelper{
 
+    String bookInfo;
     //Database Version
     private static final int DATABASE_VERSION = 1;
 
@@ -90,6 +92,15 @@ public class DbHandler extends SQLiteOpenHelper{
         return allBooks;
     }
 
+    public String allBooksInfo(){
+        List<Book> allBooks = getAllBooks();
+
+        for (Book book : allBooks) {
+             bookInfo = book.getTitle() + " " + book.getPageCount() + " " + book.getDateAdded() + "/n";
+        }
+        return bookInfo;
+    }
+
     //Update a single entry
 
     public String updateBookEntry(Integer id, String title, int pagecount){
@@ -103,6 +114,10 @@ public class DbHandler extends SQLiteOpenHelper{
     }
 
 
+    public int getBookCount(){
+        List<Book> allBooks = getAllBooks();
+        return allBooks.size();
+    }
 
     //close db method
     public void closeDB(){
