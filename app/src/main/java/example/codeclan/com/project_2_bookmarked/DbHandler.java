@@ -97,7 +97,7 @@ public class DbHandler extends SQLiteOpenHelper{
         List<Book> allBooks = getAllBooks();
 
         for (Book book : allBooks) {
-            System.out.println(book.getTitle() + " " + book.getPageCount() + " " + book.getDateAdded());
+            System.out.println(book.getTitle() + " " + book.getPageCount() + " " + book.getDateAdded() + "Book id = " +  book.getId());
 
         }
         return " All books";
