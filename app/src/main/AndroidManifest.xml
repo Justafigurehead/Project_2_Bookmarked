@@ -15,7 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".individualBookInfoActivity"></activity>
+        <activity android:name=".individualBookInfoActivity" />
+        <activity android:name=".ListAllBooksActivity" />
+        <activity android:name=".ListAllBooks" />
+        <activity android:name=".IndividualBookInfoActivity" />
     </application>
 
 </manifest>
