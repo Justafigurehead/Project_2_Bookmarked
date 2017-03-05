@@ -92,13 +92,15 @@ public class DbHandler extends SQLiteOpenHelper{
         return allBooks;
     }
 
+    // get a String that contains all book info
     public String allBooksInfo(){
         List<Book> allBooks = getAllBooks();
 
         for (Book book : allBooks) {
-             bookInfo = book.getTitle() + " " + book.getPageCount() + " " + book.getDateAdded() + "/n";
+            System.out.println(book.getTitle() + " " + book.getPageCount() + " " + book.getDateAdded());
+
         }
-        return bookInfo;
+        return " All books";
     }
 
     //Update a single entry

@@ -15,7 +15,7 @@ public class showAllBooksActivity extends AppCompatActivity {
 
         DbHandler db = new DbHandler(this);
 
-            Log.d("All my Books", db.allBooksInfo());
+            Log.d("Books info", db.allBooksInfo());
             Log.d("Book count", db.getBookCount() + " books");
         db.closeDB();
     }
