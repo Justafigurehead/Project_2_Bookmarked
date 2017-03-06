@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListAllBooksActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
@@ -31,7 +32,9 @@ public class ListAllBooksActivity extends AppCompatActivity implements AdapterVi
 // Find by ids
         allBooksList = (ListView) findViewById(R.id.allBooks_lv);
         List<Book> allBooks = db.getAllBooks();
-        ArrayAdapter<Book> bookArrayAdapter = new ArrayAdapter<Book>(this, android.R.layout.simple_list_item_1, allBooks);
+        ArrayList<String> titles = db.bookInfoForList();
+
+        ArrayAdapter<String> bookArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, titles);
         allBooksList.setAdapter(bookArrayAdapter);
         allBooksList.setOnItemClickListener(this);
 

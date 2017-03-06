@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Project_2_Bookmarked</string>
     <string name="short_app_name">Bookmarked</string>
+    <string name="viewAllBooks_Btn">View all your books</string>
+    <string name="allYourBooks_txt">All Your Books</string>
+    <string name="Book_info_txt">Book info</string>
 </resources>

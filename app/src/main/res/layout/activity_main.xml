@@ -8,7 +8,49 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center"
+    android:padding="0dp"
     android:orientation="vertical"
     tools:context="example.codeclan.com.project_2_bookmarked.MainActivity">
 
+    <LinearLayout
+        android:id="@+id/firstLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:background="@color/colorAccent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="30dp"
+            >
+
+            <Button
+                android:id="@+id/launcherViewAllBooks_Btn"
+                android:onClick="onAllBooksClick"
+                android:text="@string/viewAllBooks_Btn"
+                android:textSize="20sp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+       >
+
+    </LinearLayout>
 </LinearLayout>

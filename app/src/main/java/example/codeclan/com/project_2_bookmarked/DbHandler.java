@@ -14,6 +14,7 @@ import java.util.List;
 public class DbHandler extends SQLiteOpenHelper{
 
     String bookInfo;
+    List<Book> allBooks = getAllBooks();
     //Database Version
     private static final int DATABASE_VERSION = 1;
 
@@ -94,7 +95,6 @@ public class DbHandler extends SQLiteOpenHelper{
 
     // get a String that contains all book info
     public String allBooksInfo(){
-        List<Book> allBooks = getAllBooks();
 
         for (Book book : allBooks) {
             System.out.println(book.getTitle() + " " + book.getPageCount() + " " + book.getDateAdded() + "Book id = " +  book.getId());
@@ -103,6 +103,17 @@ public class DbHandler extends SQLiteOpenHelper{
         return " All books";
     }
 
+
+    //an array of Strings
+
+    public ArrayList<String> bookInfoForList(){
+        ArrayList<String> title = new ArrayList<String>();
+        for (Book book : allBooks){
+            String newTitle = book.getTitle();
+            title.add(newTitle);
+        }
+        return title;
+    }
     //Update a single entry
 
     public String updateBookEntry(Integer id, String title, int pagecount){
@@ -117,7 +128,6 @@ public class DbHandler extends SQLiteOpenHelper{
 
 
     public int getBookCount(){
-        List<Book> allBooks = getAllBooks();
         return allBooks.size();
     }
 
