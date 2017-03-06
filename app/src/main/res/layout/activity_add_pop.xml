@@ -50,7 +50,6 @@
     <EditText
         android:id="@+id/bookDateAdded_EV"
         android:hint="DD/MM/YYYY"
-        android:inputType="date"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:paddingRight="25dp"
@@ -61,10 +60,11 @@
         />
 
     <Button
+        android:id="@+id/addNewBookBtn_POP"
+        android:onClick="onAddBookBtnClicked"
         android:text="@string/addBook_btn"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:id="@+id/addNewBookwithInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </RelativeLayout>

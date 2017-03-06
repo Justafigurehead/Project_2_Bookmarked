@@ -114,8 +114,28 @@ public class DbHandler extends SQLiteOpenHelper{
         }
         return title;
     }
-    //Update a single entry
 
+    //get a single entry
+
+    public Book getBook(int id){
+        Book book = new Book();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor bookCursor =  db.rawQuery( "SELECT * FROM " + TABLE_BOOKS + " where " + KEY_ID + " = " + id + ";", null );
+
+        if (bookCursor != null ){
+            bookCursor.moveToNext();
+            book.setId(bookCursor.getInt(bookCursor.getColumnIndex(KEY_ID)));
+            book.setTitle(bookCursor.getString(bookCursor.getColumnIndex(TITLE)));
+            book.setPageCount(bookCursor.getInt(bookCursor.getColumnIndex(PAGECOUNT)));
+            book.setDateAdded(bookCursor.getString(bookCursor.getColumnIndex(DATE_ADDED)));
+        }
+
+        return book;
+
+    }
+
+
+    //Update a single entry
     public String updateBookEntry(Integer id, String title, int pagecount){
         SQLiteDatabase db = this.getWritableDatabase();
 

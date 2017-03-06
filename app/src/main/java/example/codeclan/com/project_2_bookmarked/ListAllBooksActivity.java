@@ -39,7 +39,10 @@ public class ListAllBooksActivity extends AppCompatActivity implements AdapterVi
     }
 
     public void onItemClick(AdapterView<?> parent, View view, int i, long id){
+        String bookId = Integer.toString(allBooksList.getPositionForView(view) + 1);
+
         Intent intent = new Intent(this, IndividualBookInfoActivity.class);
+        intent.putExtra("Id", bookId);
         startActivity(intent);
 
         //On click to move to a new activity.
