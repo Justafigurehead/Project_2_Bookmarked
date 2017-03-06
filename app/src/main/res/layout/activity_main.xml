@@ -28,16 +28,7 @@
             android:paddingRight="30dp"
             >
 
-            <Button
-                android:id="@+id/launcherViewAllBooks_Btn"
-                android:onClick="onAllBooksClick"
-                android:text="@string/viewAllBooks_Btn"
-                android:textSize="20sp"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_centerInParent="true"
-                android:layout_alignParentRight="true"
-                />
+
 
         </RelativeLayout>
 
@@ -51,6 +42,37 @@
         android:layout_weight="1"
         android:background="@color/colorPrimary"
        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            >
+
+            <Button
+                android:id="@+id/launcherAddBook_Btn"
+                android:onClick="addButton_Click"
+                android:text="@string/addNewBook"
+                android:textSize="20sp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:padding="15dp"
+                />
+
+            <Button
+                android:id="@+id/launcherViewAllBooks_Btn"
+                android:onClick="onAllBooksClick"
+                android:text="@string/viewAllBooks_Btn"
+                android:textSize="20sp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:padding="15dp"
+                />
+        </RelativeLayout>
 
     </LinearLayout>
 </LinearLayout>

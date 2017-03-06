@@ -12,6 +12,7 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
     ListView allBooksList;
 
+    Button createNewBook_Btn;
     Button viewAllBooks_Btn;
 
     @Override
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        createNewBook_Btn = (Button) findViewById(R.id.launcherAddBook_Btn);
         viewAllBooks_Btn = (Button) findViewById(R.id.launcherViewAllBooks_Btn);
     }
 
@@ -27,5 +29,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListAllBooksActivity.class);
         startActivity(intent);
         Log.d("Btn All books", "Clicked!");
+    }
+
+    public void addButton_Click(View view){
+        Intent intent = new Intent(this, addPop.class);
+        startActivity(intent);
+        Log.d("Btn Add Book", "Clicked");
     }
 }
