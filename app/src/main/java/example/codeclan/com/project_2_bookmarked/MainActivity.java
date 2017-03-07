@@ -8,13 +8,17 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    ListView allBooksList;
 
+    TextView countTV;
     Button createNewBook_Btn;
     Button viewAllBooks_Btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         createNewBook_Btn = (Button) findViewById(R.id.launcherAddBook_Btn);
         viewAllBooks_Btn = (Button) findViewById(R.id.launcherViewAllBooks_Btn);
+        countTV = (TextView) findViewById(R.id.countTV);
+
+        DbHandler db = new DbHandler(this);
+        List<Book> allbooks = db.getAllBooks();
+        countTV.setText(allbooks.size() + "Books On Your List");
     }
 
 
