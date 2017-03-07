@@ -7,6 +7,7 @@ public class Book {
 
      int id;
      String title;
+     int currentlyread;
      int pageCount;
      String dateAdded;
 
@@ -16,12 +17,22 @@ public class Book {
 
     public Book(int id, String title, int pageCount,String dateAdded){
         this.title = title;
+        this.currentlyread = 0;
         this.pageCount = pageCount;
         this.dateAdded = dateAdded;
     }
 
+    public Integer getCurrentlyread() {
+        return currentlyread;
+    }
+
+    public void setCurrentlyread(int currentlyread) {
+        this.currentlyread = currentlyread;
+    }
+
     public Book(String title, int pageCount, String dateAdded){
         this.title = title;
+        this.currentlyread = 0;
         this.pageCount = pageCount;
         this.dateAdded = dateAdded;
 

@@ -13,17 +13,25 @@ public class updateEntryActivity extends AppCompatActivity {
 
     EditText edittedTitle;
     EditText edittedPC;
+    EditText edittedReadCount;
     Button backButton;
+    Button submit;
     String id;
+    DbHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_entry);
 
+
+        db = new DbHandler(this);
+
         edittedTitle = (EditText) findViewById(R.id.editTitle_ET);
         edittedPC = (EditText) findViewById(R.id.edittedPC_ET);
+        edittedReadCount = (EditText) findViewById(R.id.cRead_ET);
         backButton = (Button) findViewById(R.id.back_replacement_btn);
+        submit = (Button) findViewById(R.id.edittedEntry_btn);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -31,6 +39,8 @@ public class updateEntryActivity extends AppCompatActivity {
             Log.d("check extras", title);
         String pagecount = extras.getString("pagecount");
             Log.d("check second extras", pagecount);
+        String readCount = extras.getString("readCount");
+            Log.d("readCount", readCount);
         id = extras.getString("id");
 
         edittedTitle.setText(title, TextView.BufferType.EDITABLE);
@@ -38,9 +48,27 @@ public class updateEntryActivity extends AppCompatActivity {
 
     }
 
-    public void onBackButtonClicked(View view){
+    public void backToIndividualpg(){
         Intent intent = new Intent(this, IndividualBookInfoActivity.class);
         intent.putExtra("id", id);
         startActivity(intent);
+    }
+
+    public void onBtnClick(View view){
+
+        switch (view.getId()){
+
+            case R.id.back_replacement_btn :
+                break;
+
+            case R.id.edittedEntry_btn :
+                int bookId = Integer.parseInt(id);
+                String updatetitle = edittedTitle.getText().toString();
+                int updatePC = Integer.parseInt(edittedPC.getText().toString());
+                int updateRC = Integer.parseInt(edittedReadCount.getText().toString());
+                db.updateBookEntry(bookId, updatetitle, updateRC , updatePC);
+                break;
+        }
+        backToIndividualpg();
     }
 }

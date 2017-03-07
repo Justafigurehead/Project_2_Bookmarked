@@ -20,6 +20,7 @@ public class IndividualBookInfoActivity extends AppCompatActivity {
     String pagecount;
     String dateAdded;
     String id;
+    String readCount;
 
 
     @Override
@@ -46,6 +47,8 @@ public class IndividualBookInfoActivity extends AppCompatActivity {
         title = retrievedBook.getTitle();
         pagecount = retrievedBook.getPageCount().toString();
         dateAdded = retrievedBook.getDateAdded();
+        readCount = retrievedBook.getCurrentlyread().toString();
+
 
         title_TV.setText(title);
         pageCount_TV.setText(pagecount);
@@ -58,6 +61,7 @@ public class IndividualBookInfoActivity extends AppCompatActivity {
         Intent intent = new Intent(this, updateEntryActivity.class);
         intent.putExtra("id", id);
         intent.putExtra("title", title);
+        intent.putExtra("readCount", readCount);
         intent.putExtra("pagecount", pagecount);
         startActivity(intent);
     }
