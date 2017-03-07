@@ -25,6 +25,7 @@
         android:id="@+id/bookTitle_EV"
         android:hint="Enter your book title: "
         android:layout_width="match_parent"
+        android:imeOptions="actionDone"
         android:layout_height="55dp"
         android:layout_marginTop="10dp"
         android:paddingRight="25dp"
@@ -38,6 +39,7 @@
         android:id="@+id/bookPageCount_EV"
         android:hint="Enter Pagecount"
         android:inputType="number"
+        android:imeOptions="actionDone"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:paddingRight="25dp"
@@ -50,6 +52,7 @@
     <EditText
         android:id="@+id/bookDateAdded_EV"
         android:hint="DD/MM/YYYY"
+        android:imeOptions="actionDone"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:paddingRight="25dp"

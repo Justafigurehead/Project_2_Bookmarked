@@ -25,8 +25,15 @@
             android:parentActivityName=".ListAllBooksActivity" />
         <activity
             android:name=".addPop"
-            android:theme="@style/add_Pop"></activity>
-        <activity android:name=".updateEntryActivity"></activity>
+            android:theme="@style/add_Pop"
+            android:windowSoftInputMode="adjustNothing">
+
+        </activity>
+        <activity android:name=".updateEntryActivity"
+            android:label="@string/updateTitle"
+            >
+
+        </activity>
     </application>
 
 </manifest>
