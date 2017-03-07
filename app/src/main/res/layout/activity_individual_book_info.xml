@@ -30,6 +30,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
@@ -39,6 +43,19 @@
         android:max="0"
         android:progress="0"
         />
+
+    <TextView
+        android:id="@+id/progressBarTV"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        />
+
+</RelativeLayout>
 
     <Button
         android:id="@+id/update_on_individual_pg_btn"

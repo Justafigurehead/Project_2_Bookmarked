@@ -63,6 +63,8 @@ public class BookListAdapter extends BaseAdapter {
             progressBar.setProgress(book.getCurrentlyread());
             progressBar.setVisibility(View.VISIBLE);
 
+            TextView progressBarTV = (TextView) rowView.findViewById(R.id.listProgressBarText);
+            progressBarTV.setText(book.getCurrentlyread() + "/" + book.getPageCount());
             return rowView;
 
     }
