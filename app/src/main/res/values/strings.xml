@@ -6,4 +6,5 @@
     <string name="Book_info_txt">Book info</string>
     <string name="addNewBook">Add a new Book!</string>
     <string name="addBook_btn">Add Book</string>
+    <string name="update_Btn_txt">Update</string>
 </resources>

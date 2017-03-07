@@ -32,8 +32,13 @@ public class IndividualBookInfoActivity extends AppCompatActivity {
 
         Book retrievedBook = db.getBook(bookId);
 
+
         String title = retrievedBook.getTitle();
+        String pagecount = retrievedBook.getPageCount().toString();
+        String dateAdded = retrievedBook.getDateAdded();
         title_TV.setText(title);
+        pageCount_TV.setText(pagecount);
+        dateAdded_TV.setText(dateAdded);
 
 
     }

@@ -15,21 +15,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ListAllBooksActivity"
             android:label="@string/allYourBooks_txt"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".IndividualBookInfoActivity"
             android:label="@string/Book_info_txt"
             android:parentActivityName=".ListAllBooksActivity" />
-
-        <activity android:name=".addPop"
-            android:theme="@style/add_Pop">
-
-        </activity>
+        <activity
+            android:name=".addPop"
+            android:theme="@style/add_Pop"></activity>
+        <activity android:name=".updateEntryActivity"></activity>
     </application>
 
 </manifest>
