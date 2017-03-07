@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class IndividualBookInfoActivity extends AppCompatActivity {
@@ -21,7 +22,7 @@ public class IndividualBookInfoActivity extends AppCompatActivity {
     String dateAdded;
     String id;
     String readCount;
-
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class IndividualBookInfoActivity extends AppCompatActivity {
         pageCount_TV = (TextView) findViewById(R.id.viewIndividualPC_TV);
         dateAdded_TV = (TextView) findViewById(R.id.viewWhenAdded_TV);
         update_Btn = (Button) findViewById(R.id.update_on_individual_pg_btn);
-
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         db = new DbHandler(this);
 
@@ -53,7 +54,8 @@ public class IndividualBookInfoActivity extends AppCompatActivity {
         title_TV.setText(title);
         pageCount_TV.setText(pagecount);
         dateAdded_TV.setText(dateAdded);
-
+        progressBar.setMax(Integer.parseInt(pagecount));
+        progressBar.setProgress(Integer.parseInt(readCount));
 
     }
 

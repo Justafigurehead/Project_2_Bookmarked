@@ -18,7 +18,8 @@
         <activity
             android:name=".ListAllBooksActivity"
             android:label="@string/allYourBooks_txt"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+             />
         <activity
             android:name=".IndividualBookInfoActivity"
             android:label="@string/Book_info_txt"

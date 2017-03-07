@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.util.List;
 
@@ -56,6 +57,11 @@ public class BookListAdapter extends BaseAdapter {
 
             TextView dateAddedTextView = (TextView) rowView.findViewById(R.id.DateAddedView);
             dateAddedTextView.setText("Added " + book.getDateAdded());
+
+            ProgressBar progressBar = (ProgressBar) rowView.findViewById(R.id.listProgressBar);
+            progressBar.setMax(book.getPageCount());
+            progressBar.setProgress(book.getCurrentlyread());
+            progressBar.setVisibility(View.VISIBLE);
 
             return rowView;
 

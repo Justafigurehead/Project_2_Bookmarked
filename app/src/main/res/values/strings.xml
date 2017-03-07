@@ -12,4 +12,5 @@
     <string name="pagecount">Pagecount:</string>
     <string name="goBack">Go Back</string>
     <string name="currentlyRead">I\'ve read ...</string>
+    <string name="addANewBook">Add a new book!</string>
 </resources>

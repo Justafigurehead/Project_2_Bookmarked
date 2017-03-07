@@ -19,4 +19,14 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent" />
 
+    <ProgressBar
+        android:id="@+id/listProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="0"
+        android:progress="0"
+        />
+
 </LinearLayout>
