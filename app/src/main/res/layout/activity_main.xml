@@ -14,30 +14,38 @@
     tools:context="example.codeclan.com.project_2_bookmarked.MainActivity">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="3"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/launcher_Latest_Book"
+            android:text="@string/addANewBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/LauncherProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/custom_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="0"
+            android:progress="0"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/firstLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1"
+        android:layout_weight="3"
         android:background="@color/colorAccent"
         >
-
-
-            <TextView
-                android:id="@+id/launcher_Latest_Book"
-                android:text="@string/addANewBook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:progressDrawable="@drawable/custom_progress_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:max="0"
-                android:progress="0"
-                />
 
         <TextView
             android:id="@+id/countTV"
@@ -53,8 +61,8 @@
         android:id="@+id/secondLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_weight="2"
         android:background="@color/colorPrimary"
        >
         <RelativeLayout
@@ -66,7 +74,7 @@
 
             <Button
                 android:id="@+id/launcherAddBook_Btn"
-                android:onClick="addButton_Click"
+                android:onClick="onLauncherButtonsClicked"
                 android:text="@string/addNewBook"
                 android:textSize="20sp"
                 android:layout_width="150dp"
@@ -78,7 +86,7 @@
 
             <Button
                 android:id="@+id/launcherViewAllBooks_Btn"
-                android:onClick="onAllBooksClick"
+                android:onClick="onLauncherButtonsClicked"
                 android:text="@string/viewAllBooks_Btn"
                 android:textSize="20sp"
                 android:layout_width="150dp"

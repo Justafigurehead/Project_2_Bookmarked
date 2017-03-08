@@ -8,8 +8,9 @@
         android:label="@string/short_app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:theme="@style/MainAppTheme">
+
+        <activity android:name=".splash_activity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,10 +18,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:theme="@style/MainAppTheme">
+        </activity>
+        <activity
             android:name=".ListAllBooksActivity"
             android:label="@string/allYourBooks_txt"
-            android:parentActivityName=".MainActivity"
-             />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".IndividualBookInfoActivity"
             android:label="@string/Book_info_txt"
@@ -28,14 +32,10 @@
         <activity
             android:name=".addPop"
             android:theme="@style/add_Pop"
-            android:windowSoftInputMode="adjustNothing">
-
-        </activity>
-        <activity android:name=".updateEntryActivity"
-            android:label="@string/updateTitle"
-            >
-
-        </activity>
+            android:windowSoftInputMode="adjustNothing"></activity>
+        <activity
+            android:name=".updateEntryActivity"
+            android:label="@string/updateTitle"></activity>
     </application>
 
 </manifest>

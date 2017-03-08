@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView countTV;
     Button createNewBook_Btn;
     Button viewAllBooks_Btn;
-
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +34,22 @@ public class MainActivity extends AppCompatActivity {
 
         DbHandler db = new DbHandler(this);
         List<Book> allbooks = db.getAllBooks();
-        countTV.setText(allbooks.size() + "Books On Your List");
+        countTV.setText(allbooks.size() +  " Books On Your List");
     }
 
 
-    public void onAllBooksClick(View view){
-        Intent intent = new Intent(this, ListAllBooksActivity.class);
+    public void onLauncherButtonsClicked(View view){
+
+        switch (view.getId()){
+            case R.id.launcherAddBook_Btn :
+                 intent = new Intent(this, addPop.class);
+                break;
+            case R.id.launcherViewAllBooks_Btn :
+                 intent = new Intent(this, ListAllBooksActivity.class);
+                break;
+        }
+
         startActivity(intent);
         Log.d("Btn All books", "Clicked!");
-    }
-
-    public void addButton_Click(View view){
-        Intent intent = new Intent(this, addPop.class);
-        startActivity(intent);
-        Log.d("Btn Add Book", "Clicked");
     }
 }
