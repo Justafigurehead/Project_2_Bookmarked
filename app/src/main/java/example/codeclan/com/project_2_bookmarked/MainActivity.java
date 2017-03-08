@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         DbHandler db = new DbHandler(this);
         List<Book> allbooks = db.getAllBooks();
-        countTV.setText(allbooks.size() +  " Books On Your List");
+        Integer size = allbooks.size();
+        countTV.setText(size.toString());
     }
 
 

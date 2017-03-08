@@ -13,4 +13,5 @@
     <string name="goBack">Go Back</string>
     <string name="currentlyRead">I\'ve read ...</string>
     <string name="addANewBook">Add a new book!</string>
+    <string name="booksRead_ML">Books On Your List</string>
 </resources>
