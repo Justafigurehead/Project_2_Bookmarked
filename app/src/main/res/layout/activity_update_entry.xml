@@ -14,8 +14,9 @@
     <TextView
         android:text="@string/title"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:textSize="25sp"
+        android:layout_marginTop="5dp"
         />
 
     <EditText
@@ -23,14 +24,16 @@
         android:text=""
         android:layout_width="match_parent"
         android:gravity="bottom"
-        android:layout_height="75dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
         />
 
     <TextView
         android:text="@string/currentlyRead"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:textSize="25sp"
+        android:layout_marginTop="5dp"
         />
 
     <EditText
@@ -38,20 +41,25 @@
         android:text=""
         android:layout_width="match_parent"
         android:gravity="bottom"
-        android:layout_height="75dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
         />
 
     <TextView
         android:text="@string/pagecount"
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"/>
 
     <EditText
         android:id="@+id/edittedPC_ET"
         android:text=""
         android:gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
